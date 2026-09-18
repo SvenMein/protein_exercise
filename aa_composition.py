@@ -7,7 +7,7 @@
 
 from collections import Counter 
 
-def read_fasta(filename): 
+def read_fasta(gfp.fasta): 
     """ 
     Read a FASTA file and return the sequences. 
     """
@@ -15,7 +15,7 @@ def read_fasta(filename):
     name = None 
     sequence = "" 
 
-    with open(filename, "r") as file: 
+    with open(gfp.fasta, "r") as file: 
         for line in file: 
             line = line.strip() 
             if line.startswith(">"): 
@@ -40,7 +40,7 @@ def aa_composition(sequence):
     return counts
 
 # Read the FASTA file 
-proteins = read_fasta("proteins.fasta")
+proteins = read_fasta("gfp.fasta")
 
 # Calculate amino acid composition 
 for name, sequence in proteins.items():
