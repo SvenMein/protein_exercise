@@ -7,7 +7,7 @@
 
 from collections import Counter 
 
-def read_fasta(gfp.fasta): 
+def read_fasta(filename): 
     """ 
     Read a FASTA file and return the sequences. 
     """
@@ -15,7 +15,7 @@ def read_fasta(gfp.fasta):
     name = None 
     sequence = "" 
 
-    with open(gfp.fasta, "r") as file: 
+    with open(filename, "r") as file: 
         for line in file: 
             line = line.strip() 
             if line.startswith(">"): 
